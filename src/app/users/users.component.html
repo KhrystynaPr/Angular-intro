@@ -1,0 +1,5 @@
+<div class="container">
+    <button (click)="onButtonClick()">Get users list</button>
+    <div class="users" *ngFor="let user of users">{{user.id}} - {{user.name}} - {{user.phone}}</div>
+</div>
+
