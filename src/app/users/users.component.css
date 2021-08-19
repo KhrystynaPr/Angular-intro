@@ -6,3 +6,9 @@
 .users {
     margin-top: 50px;
 }
+
+th, td, tr {
+    padding: 10px;
+    border: 1px solid black;
+}
+
