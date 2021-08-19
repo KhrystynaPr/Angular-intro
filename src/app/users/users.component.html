@@ -2,7 +2,7 @@
     <button (click)="onButtonClick()">Get users list</button>
 </div>    
     <table class="container">
-        <tr>
+        <tr *ngIf="tableLoaded">
             <th>id</th>
             <th>name</th>
             <th>username</th>

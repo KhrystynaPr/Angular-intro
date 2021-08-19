@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { USERS } from '../mock-users'; 
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-users',
@@ -9,14 +9,18 @@ import { USERS } from '../mock-users';
 export class UsersComponent implements OnInit {
 
   users : any = [];
- 
-  constructor() { }
+  tableLoaded = false
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   onButtonClick() {
-    console.log('omg')
-    this.users = USERS
+    this.userService.getUsers()
+    .subscribe(data => {
+      this.users = data
+      this.tableLoaded = true
+    })
   }
+
 }
