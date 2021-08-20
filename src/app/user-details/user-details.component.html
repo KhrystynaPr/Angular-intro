@@ -1,0 +1,27 @@
+<div class="container">
+    <table *ngIf="user">
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <tr>street : {{user.address.street}}</tr>
+                <tr>suite : {{user.address.suite}}</tr>
+                <tr>city : {{user.address.city}}</tr>
+                <tr>zipcode : {{user.address.zipcode}}</tr>
+                <tr>geo : </tr>
+                <tr>lat : {{user.address.geo.lat}}</tr>
+                <tr>lng : {{user.address.geo.lng}}</tr>
+            </td>
+            <td>{{user.phone}}</td>
+            <td>{{user.website}}</td>
+            <td>
+                <tr>name : {{user.company.name}}</tr>
+                <tr>catchPhrase : {{user.company.catchPhrase}}</tr>
+                <tr>bs : {{user.company.bs}}</tr>
+            </td>
+        </tr>
+    </table>
+</div>
+

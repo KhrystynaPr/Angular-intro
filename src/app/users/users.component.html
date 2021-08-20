@@ -6,8 +6,9 @@
         <div>
             <button (click)="onHideButtonClick()">Hide users list</button>
         </div> 
+        <input type="text" placeholder="search">
     </div>
-    <div>
+    <div class="main-content">
         <table (window:scroll)="onScroll($event)">
             <tr *ngIf="tableLoaded">
                 <th>id</th>
@@ -19,7 +20,7 @@
                 <th>website</th>
                 <th>company</th>
             </tr>
-            <tr *ngFor="let user of users">
+            <tr *ngFor="let user of users" (click)="onUserClick(user.id, user.username)">
                 <td>{{user.id}}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.username}}</td>

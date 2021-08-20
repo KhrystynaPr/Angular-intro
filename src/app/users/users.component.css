@@ -3,12 +3,21 @@
     padding: 20px;
 }
 
+.main-content {
+    min-height: 70vh;
+}
+
 .users {
     margin-top: 50px;
 }
 
 .buttons {
     display: flex;
+    justify-content: space-around;
+}
+
+table {
+    margin-top: 50px;
 }
 
 th, td, tr {

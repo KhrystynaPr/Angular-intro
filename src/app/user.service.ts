@@ -13,4 +13,8 @@ export class UserService {
     return this.http.get(apiUrl)
   }
 
+  getUserById(id: number) {
+    const apiUrl = `https://jsonplaceholder.typicode.com/users/${id}`
+    return this.http.get(apiUrl)
+  }
 }

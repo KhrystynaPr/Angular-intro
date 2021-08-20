@@ -1,9 +1,9 @@
+.container {
+    width: 1200px;
+}
+
 header {
     padding: 20px;
     display: flex;
     justify-content: space-between;
-}
-
-.container {
-    width: 1200px;
 }
