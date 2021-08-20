@@ -4,14 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService { 
-
-  apiUrl = 'https://jsonplaceholder.typicode.com/users'
+export class UserService {  
 
   constructor(private http: HttpClient) {}
 
-  getUsers() {
-    return this.http.get(this.apiUrl)
+  getUsers(page: number=1) {
+    const apiUrl = `https://jsonplaceholder.typicode.com/users?_page=${page}&_limit=5`
+    return this.http.get(apiUrl)
   }
 
 }
