@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
 import { UserService } from './user.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { FormsModule } from '@angular/forms';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     HeaderComponent,
     FooterComponent,
     UsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     UserService
