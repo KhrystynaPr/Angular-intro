@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 export class UsersComponent {
   page = 1;
   users : any = [];
+  displayedUsers : any = [];
   tableLoaded = false;
+  value: string = '';
+  public searchFilter: any = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -19,12 +22,13 @@ export class UsersComponent {
     this.userService.getUsers(this.page)
     .subscribe(data => {
       this.users = data;
+      this.displayedUsers = data;
       this.tableLoaded = true;
     })
   }
 
   onHideButtonClick() {
-    this.users = []
+    this.displayedUsers = []
     this.tableLoaded = false
   }
 
@@ -40,6 +44,7 @@ export class UsersComponent {
         this.userService.getUsers(this.page)
         .subscribe(data => {
         this.users = this.users.concat(data)
+        this.displayedUsers = this.displayedUsers.concat(data)
         })
       }
     }
