@@ -7,6 +7,10 @@
     margin-top: 50px;
 }
 
+.buttons {
+    display: flex;
+}
+
 th, td, tr {
     padding: 10px;
     border: 1px solid black;

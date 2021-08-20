@@ -1,39 +1,50 @@
 <div class="container">
-    <button (click)="onButtonClick()">Get users list</button>
-</div>    
-    <table class="container">
-        <tr *ngIf="tableLoaded">
-            <th>id</th>
-            <th>name</th>
-            <th>username</th>
-            <th>email</th>
-            <th>address</th>
-            <th>phone</th>
-            <th>website</th>
-            <th>company</th>
-        </tr>
-        <tr *ngFor="let user of users">
-            <td>{{user.id}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.username}}</td>
-            <td>{{user.email}}</td>
-            <td>
-                <tr>street : {{user.address.street}}</tr>
-                <tr>suite : {{user.address.suite}}</tr>
-                <tr>city : {{user.address.city}}</tr>
-                <tr>zipcode : {{user.address.zipcode}}</tr>
-                <tr>geo : </tr>
-                <tr>lat : {{user.address.geo.lat}}</tr>
-                <tr>lng : {{user.address.geo.lng}}</tr>
-            </td>
-            <td>{{user.phone}}</td>
-            <td>{{user.website}}</td>
-            <td>
-                <tr>name :{{user.company.name}}</tr>
-                <tr>catchPhrase : {{user.company.catchPhrase}}</tr>
-                <tr>bs : {{user.company.bs}}</tr>
-            </td>
-        </tr>
-    </table>
+    <div class="buttons">
+        <div>
+            <button (click)="onGetButtonClick()">Get users list</button>
+        </div>  
+        <div>
+            <button (click)="onHideButtonClick()">Hide users list</button>
+        </div> 
+    </div>
+    <div>
+        <table (window:scroll)="onScroll($event)">
+            <tr *ngIf="tableLoaded">
+                <th>id</th>
+                <th>name</th>
+                <th>username</th>
+                <th>email</th>
+                <th>address</th>
+                <th>phone</th>
+                <th>website</th>
+                <th>company</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <tr>street : {{user.address.street}}</tr>
+                    <tr>suite : {{user.address.suite}}</tr>
+                    <tr>city : {{user.address.city}}</tr>
+                    <tr>zipcode : {{user.address.zipcode}}</tr>
+                    <tr>geo : </tr>
+                    <tr>lat : {{user.address.geo.lat}}</tr>
+                    <tr>lng : {{user.address.geo.lng}}</tr>
+                </td>
+                <td>{{user.phone}}</td>
+                <td>{{user.website}}</td>
+                <td>
+                    <tr>name : {{user.company.name}}</tr>
+                    <tr>catchPhrase : {{user.company.catchPhrase}}</tr>
+                    <tr>bs : {{user.company.bs}}</tr>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    
+        
 
 
