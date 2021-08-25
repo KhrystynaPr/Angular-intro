@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent {
+export class UsersComponent { 
   page = 1;
   users : any = [];
   displayedUsers : any = [];
@@ -17,6 +17,7 @@ export class UsersComponent {
 
   constructor(private userService: UserService, private router: Router) {}
 
+  
   onGetButtonClick() {
     this.page = 1;
     this.userService.getUsers(this.page)

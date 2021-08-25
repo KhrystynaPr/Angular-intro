@@ -1,24 +1,24 @@
 <div class="container">
     <div class="buttons">
         <div>
-            <button (click)="onGetButtonClick()">Get users list</button>
+            <button (click)="onGetButtonClick()">{{'BUTTON.GET_USERS' | translate}}</button>
         </div>  
         <div>
-            <button (click)="onHideButtonClick()">Hide users list</button>
+            <button *ngIf="tableLoaded" (click)="onHideButtonClick()">{{'BUTTON.HIDE_USERS' | translate}}</button>
         </div> 
-        <input type="text" placeholder="search" [(ngModel)]="value">
+        <input *ngIf="tableLoaded" type="text" placeholder="{{'SEARCH' | translate}}" [(ngModel)]="value">
     </div>
     <div class="main-content">
         <table (window:scroll)="onScroll($event)">
             <tr *ngIf="tableLoaded">
-                <th>id</th>
-                <th>name</th>
-                <th>username</th>
-                <th>email</th>
-                <th>address</th>
-                <th>phone</th>
-                <th>website</th>
-                <th>company</th>
+                <th>{{'DATA.ID' | translate}}</th>
+                <th>{{'DATA.NAME' | translate}}</th>
+                <th>{{'DATA.USERNAME' | translate}}</th>
+                <th>{{'DATA.EMAIL' | translate}}</th>
+                <th>{{'DATA.ADDRESS' | translate}}</th>
+                <th>{{'DATA.PHONE' | translate}}</th>
+                <th>{{'DATA.WEBSITE' | translate}}</th>
+                <th>{{'DATA.COMPANY' | translate}}</th>
             </tr>
             <tr *ngFor="let user of displayedUsers | searchFilter: value" (click)="onUserClick(user.id, user.username)">
                 <td>{{user.id}}</td>

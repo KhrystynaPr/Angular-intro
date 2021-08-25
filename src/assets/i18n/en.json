@@ -1,0 +1,26 @@
+{
+    "BUTTON": {
+        "GET_USERS": "Get users list",
+        "HIDE_USERS": "Hide users list"
+    },
+    "HEADER": {
+        "HOME": "Home",
+        "USERS": "Users",
+        "LANG":  {
+            "EN": "EN",
+            "UA": "UA"
+        }
+    },
+    "SEARCH": "search",
+    "DATA": {
+        "ID": "Id",
+        "NAME": "Name",
+        "USERNAME": "Username",
+        "EMAIL": "Email",
+        "ADDRESS": "Address",
+        "PHONE": "Phone",
+        "WEBSITE": "Website",
+        "COMPANY": "Company"
+    },
+    "FOOTER": "Footer"
+}
