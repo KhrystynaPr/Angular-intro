@@ -1,22 +1,25 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent { 
+
+export class UsersComponent implements OnInit, OnDestroy{ 
 
   page = 1;
   users : any = [];
   displayedUsers : any = [];
   tableLoaded = false;
   value: string = '';
+  isAllUsersLoaded = false
+  subs = new Subscription
 
   ngOnInit() {
-    this.page = 1;
     this.userService.getUsers(this.page)
     .subscribe(data => {
       this.users = data;
@@ -33,15 +36,26 @@ export class UsersComponent {
 
   @HostListener('scroll', ['$event'])
     onScroll(event: any) {
-      if (event.target.scrollingElement.scrollTop > 500) { // TODO fix 
-      // if (event.target.scrollingElement.offsetHeight + event.target.scrollingElement.scrollTop >= event.target.scrollingElement.scrollHeight) {
+      if (this.isAllUsersLoaded) {
+        return
+      }
+      const elem = event.target.scrollingElement
+      if (elem.scrollTop + elem.clientHeight >= elem.scrollHeight) {
         this.page++
-        this.userService.getUsers(this.page)
+        this.subs.add(this.userService.getUsers(this.page)
         .subscribe(data => {
+          if (Object.keys(data).length === 0) {
+            this.isAllUsersLoaded = true
+            return
+          }
         this.users = this.users.concat(data)
         this.displayedUsers = this.displayedUsers.concat(data)
-        })
+        }))
       }
+    }
+
+    ngOnDestroy() {
+      this.subs.unsubscribe();
     }
 
   }

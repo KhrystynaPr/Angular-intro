@@ -29,6 +29,11 @@
     color: white;
 }
 
+#get-user-button:hover {
+    cursor: pointer; 
+    font-size: 26px;
+}
+
 .description {
     display: grid;
     grid-template-rows: 1fr 1fr 190px;

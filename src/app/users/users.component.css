@@ -4,7 +4,7 @@
 }
 
 #search { 
-    margin-top: 15px;
+    margin-top: 45px;
     margin-bottom: 15px;
     padding: 10px; 
     font-size: 20px;
@@ -20,6 +20,7 @@ th {
 td {
     border: 0.5px solid rgb(175, 145, 117);
     border-width: thin;
+    padding: 15px;
 }
 
 tr:hover {

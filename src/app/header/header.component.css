@@ -19,8 +19,16 @@
     margin: 30px;
 }
 
+#home-button:hover {
+    cursor: pointer; 
+}
+
 #lang {
     color: black;
     margin: 30px;
-    font-size: 25px;
+    font-size: 20px;
+}
+
+#lang:hover { 
+    cursor: pointer;
 }
