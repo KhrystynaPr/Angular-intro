@@ -1,16 +1,16 @@
 {
     "BUTTON": {
         "GET_USERS": "Get users list",
-        "HIDE_USERS": "Hide users list"
+        "BACK": "Back"
     },
     "HEADER": {
         "HOME": "Home",
-        "USERS": "Users",
         "LANG":  {
             "EN": "EN",
             "UA": "UA"
         }
     },
+    "USERS": "Users",
     "SEARCH": "search by name",
     "DATA": {
         "ID": "Id",

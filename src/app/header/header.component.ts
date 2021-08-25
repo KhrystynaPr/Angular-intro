@@ -11,9 +11,7 @@ export class HeaderComponent {
   constructor (public translate: TranslateService) {}
 
   changeLand(lang: any) {
-    localStorage.setItem('lang', lang.target.value) 
     this.translate.use(lang.target.value)
   }
-  
 }
 
