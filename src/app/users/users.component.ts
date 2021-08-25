@@ -8,17 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent { 
+
   page = 1;
   users : any = [];
   displayedUsers : any = [];
   tableLoaded = false;
   value: string = '';
-  public searchFilter: any = '';
 
-  constructor(private userService: UserService, private router: Router) {}
-
-  
-  onGetButtonClick() {
+  ngOnInit() {
     this.page = 1;
     this.userService.getUsers(this.page)
     .subscribe(data => {
@@ -28,10 +25,7 @@ export class UsersComponent {
     })
   }
 
-  onHideButtonClick() {
-    this.displayedUsers = []
-    this.tableLoaded = false
-  }
+  constructor(private userService: UserService, private router: Router) {}
 
   onUserClick(id: number, username: string) {
     this.router.navigate(['/features', `${id}`, username]);
@@ -39,7 +33,7 @@ export class UsersComponent {
 
   @HostListener('scroll', ['$event'])
     onScroll(event: any) {
-      if (event.target.scrollingElement.scrollTop > 400) { // TODO fix 
+      if (event.target.scrollingElement.scrollTop > 500) { // TODO fix 
       // if (event.target.scrollingElement.offsetHeight + event.target.scrollingElement.scrollTop >= event.target.scrollingElement.scrollHeight) {
         this.page++
         this.userService.getUsers(this.page)
@@ -49,4 +43,5 @@ export class UsersComponent {
         })
       }
     }
+
   }

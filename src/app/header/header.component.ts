@@ -14,6 +14,6 @@ export class HeaderComponent {
     localStorage.setItem('lang', lang.target.value) 
     this.translate.use(lang.target.value)
   }
-
+  
 }
 

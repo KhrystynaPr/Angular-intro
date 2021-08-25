@@ -11,7 +11,7 @@
             "UA": "UA"
         }
     },
-    "SEARCH": "search",
+    "SEARCH": "search by name",
     "DATA": {
         "ID": "Id",
         "NAME": "Name",
@@ -22,5 +22,5 @@
         "WEBSITE": "Website",
         "COMPANY": "Company"
     },
-    "FOOTER": "Footer"
+    "FOOTER": "This page is designed to provide users with quick search information."
 }

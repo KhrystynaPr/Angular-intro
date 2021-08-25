@@ -1,6 +1,16 @@
 <div class="container">
     <table *ngIf="user">
         <tr>
+            <th>{{'DATA.ID' | translate}}</th>
+            <th>{{'DATA.NAME' | translate}}</th>
+            <th>{{'DATA.USERNAME' | translate}}</th>
+            <th>{{'DATA.EMAIL' | translate}}</th>
+            <th>{{'DATA.ADDRESS' | translate}}</th>
+            <th>{{'DATA.PHONE' | translate}}</th>
+            <th>{{'DATA.WEBSITE' | translate}}</th>
+            <th>{{'DATA.COMPANY' | translate}}</th>
+        </tr>
+        <tr>
             <td>{{user.id}}</td>
             <td>{{user.name}}</td>
             <td>{{user.username}}</td>
@@ -23,5 +33,9 @@
             </td>
         </tr>
     </table>
+    <div id="img">
+        <img src="../../assets/img/background-cut.png" alt="Users">
+        <img src="../../assets/img/background-cut.png" alt="Users">
+    </div>
 </div>
 

@@ -6,11 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchFilterPipe implements PipeTransform {
 
   transform(users: any, inputValue?: any): any {
-    if(!users)return null;
+    if(!users) {
+      return null
+    } 
     if(!inputValue)return users;
 
     return users.filter(function(data: any){
-        return JSON.stringify(data).includes(inputValue);
+        return JSON.stringify(data.name).includes(inputValue);
     });
   }
 }
