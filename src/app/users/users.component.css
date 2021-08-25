@@ -1,27 +1,27 @@
 .container {
-    width: 1200px;
-    padding: 20px;
+    width: 1400px;
+    margin: 0 auto; 
 }
 
-.main-content {
-    min-height: 70vh;
+#search { 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px; 
+    font-size: 20px;
 }
 
-.users {
-    margin-top: 50px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-around;
-}
-
-table {
-    margin-top: 50px;
-}
-
-th, td, tr {
+th {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
     padding: 10px;
-    border: 1px solid black;
 }
 
+td {
+    border: 0.5px solid rgb(175, 145, 117);
+    border-width: thin;
+}
+
+tr:hover {
+    background-color: rgb(240, 223, 204);
+}
