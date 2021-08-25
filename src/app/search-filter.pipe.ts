@@ -9,10 +9,8 @@ export class SearchFilterPipe implements PipeTransform {
     if(!users)return null;
     if(!inputValue)return users;
 
-    inputValue = inputValue.toLowerCase();
-
     return users.filter(function(data: any){
-        return JSON.stringify(data).toLowerCase().includes(inputValue);
+        return JSON.stringify(data).includes(inputValue);
     });
   }
 }

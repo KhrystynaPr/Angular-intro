@@ -1,16 +1,15 @@
 <div class="container">
     <header>
-        <a routerLink="/">Home</a>
-        <h1>Users</h1>
-        <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            Language
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Ukrainian</a></li>
-                <li><a class="dropdown-item" href="#">English</a></li>
-                <li><a class="dropdown-item" href="#">German</a></li>
-            </ul>
+        <a routerLink="/">{{'HEADER.HOME' | translate}}</a>
+        <h1>{{'HEADER.USERS' | translate}}</h1>
+        <div class="row">
+            <div class="col-9"></div>
+            <div class="col-3">
+                <select class="custom-select" (change)="changeLand($event)">
+                    <option value="en">{{'HEADER.LANG.EN' | translate}}</option>
+                    <option value="ua">{{'HEADER.LANG.UA' | translate}}</option>
+                </select>
+            </div>
         </div>
     </header>
 </div>
