@@ -1,0 +1,28 @@
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.search {
+  margin-top: 45px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+th {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+td {
+  border: 0.5px solid rgb(175, 145, 117);
+  border-width: thin;
+  padding: 15px;
+}
+
+tr:hover {
+  background-color: rgb(240, 223, 204);
+}
