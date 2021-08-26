@@ -1,0 +1,11 @@
+<header class="container header">
+  <a class="home-button" routerLink="/">{{ "HEADER.HOME" | translate }}</a>
+  <div>
+    <div>
+      <select class="lang" (change)="changeLand($event)">
+        <option value="en">{{ "HEADER.LANG.EN" | translate }}</option>
+        <option value="ua">{{ "HEADER.LANG.UA" | translate }}</option>
+      </select>
+    </div>
+  </div>
+</header>

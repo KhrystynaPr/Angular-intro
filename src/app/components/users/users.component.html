@@ -1,0 +1,92 @@
+<div class="container">
+  <input
+    class="search"
+    type="text"
+    placeholder="{{ 'SEARCH' | translate }}"
+    [(ngModel)]="value"
+  />
+  <table class="container" (window:scroll)="onScroll($event)">
+    <tr>
+      <th>{{ "DATA.ID" | translate }}</th>
+      <th>{{ "DATA.NAME" | translate }}</th>
+      <th>{{ "DATA.USERNAME" | translate }}</th>
+      <th>{{ "DATA.EMAIL" | translate }}</th>
+      <th>{{ "DATA.ADDRESS" | translate }}</th>
+      <th>{{ "DATA.PHONE" | translate }}</th>
+      <th>{{ "DATA.WEBSITE" | translate }}</th>
+      <th>{{ "DATA.COMPANY" | translate }}</th>
+    </tr>
+    <tr
+      *ngFor="let user of users | searchFilter: value"
+      (click)="onUserClick(user.id, user.username)"
+    >
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <tr>
+          street :
+          {{
+            user.address.street
+          }}
+        </tr>
+        <tr>
+          suite :
+          {{
+            user.address.suite
+          }}
+        </tr>
+        <tr>
+          city :
+          {{
+            user.address.city
+          }}
+        </tr>
+        <tr>
+          zipcode :
+          {{
+            user.address.zipcode
+          }}
+        </tr>
+        <tr>
+          geo :
+        </tr>
+        <tr>
+          lat :
+          {{
+            user.address.geo.lat
+          }}
+        </tr>
+        <tr>
+          lng :
+          {{
+            user.address.geo.lng
+          }}
+        </tr>
+      </td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.website }}</td>
+      <td>
+        <tr>
+          name :
+          {{
+            user.company.name
+          }}
+        </tr>
+        <tr>
+          catchPhrase :
+          {{
+            user.company.catchPhrase
+          }}
+        </tr>
+        <tr>
+          bs :
+          {{
+            user.company.bs
+          }}
+        </tr>
+      </td>
+    </tr>
+  </table>
+</div>
