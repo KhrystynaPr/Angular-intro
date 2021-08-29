@@ -17,7 +17,7 @@
       <th>{{ "DATA.COMPANY" | translate }}</th>
     </tr>
     <tr
-      *ngFor="let user of users | searchFilter: value"
+      *ngFor="let user of users | searchFilter: value:'name'"
       (click)="onUserClick(user.id, user.username)"
     >
       <td>{{ user.id }}</td>
